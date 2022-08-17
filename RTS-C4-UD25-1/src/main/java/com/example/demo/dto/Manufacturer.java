@@ -15,21 +15,21 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="manufacturers")//en caso que la tabla sea diferente
+@Table(name="manufacturers")
 public class Manufacturer  {
  
-	//Atributos de entidad cliente
+	//Attributes
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)//busca ultimo valor e incrementa desde id final de db
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(name = "name")//no hace falta si se llama igual
+	@Column(name = "name")
 	private String name;
 	
     @OneToMany
     @JoinColumn(name="id")
     private List<Article> article;
 	
-	//Constructores
+	//Constructors
 	
 	public Manufacturer() {
 	

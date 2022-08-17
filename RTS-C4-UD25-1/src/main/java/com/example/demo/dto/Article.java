@@ -18,18 +18,18 @@ public class Article {
 	
 	//Atributos de entidad cliente
 		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)//busca ultimo valor e incrementa desde id final de db
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private Long id;
-		@Column(name = "name")//no hace falta si se llama igual
+		@Column(name = "name")
 		private String name;
-		@Column(name = "price")//no hace falta si se llama igual
-		private Double price;
+		@Column(name = "price")
+		private int price;
 		
 		@ManyToOne
 	    @JoinColumn(name="manufacturer")
 	    private Manufacturer manufacturer;
 
-		//Constructores
+		//Constructors
 		/**
 		 * 
 		 */
@@ -44,7 +44,7 @@ public class Article {
 		 * @param price
 		 * @param manufacturer
 		 */
-		public Article(Long id, String name, Double price, Manufacturer manufacturer) {
+		public Article(Long id, String name, int price, Manufacturer manufacturer) {
 			this.id = id;
 			this.name = name;
 			this.price = price;
@@ -87,7 +87,7 @@ public class Article {
 		/**
 		 * @return the price
 		 */
-		public Double getPrice() {
+		public int getPrice() {
 			return price;
 		}
 
@@ -95,7 +95,7 @@ public class Article {
 		/**
 		 * @param price the price to set
 		 */
-		public void setPrice(Double price) {
+		public void setPrice(int price) {
 			this.price = price;
 		}
 
